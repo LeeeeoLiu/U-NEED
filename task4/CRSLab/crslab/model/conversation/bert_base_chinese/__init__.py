@@ -1,0 +1,1 @@
+from .bert_base_chinese import BERTBaseChineseModel

@@ -1,0 +1,23 @@
+# dataset
+dataset: UNEOD
+tokenize:
+  conv: bert_base_chinese
+# dataloader
+context_truncate: 256
+response_truncate: 50
+item_truncate: 100
+scale: 1
+# model
+conv_model: bert_base_chinese
+# optim
+conv:
+  epoch: 5
+  batch_size: 8
+  gradient_clip: 1.0
+  update_freq: 1
+  optimizer:
+    name: AdamW
+    lr: !!float 1.5e-4
+  lr_scheduler:
+    name: TransformersLinearLR
+    warmup_steps: 2000
