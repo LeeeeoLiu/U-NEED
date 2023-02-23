@@ -1,0 +1,53 @@
+# dataset
+dataset: UNEOD
+tokenize:
+  rec: ltp
+  conv: ltp
+# dataloader
+utterance_truncate: 80
+conversation_truncate: 40
+scale: 1
+# model
+# rec
+rec_model: ReDialRec
+autorec_layer_sizes: [ 5000 ]
+autorec_f: sigmoid
+autorec_g: sigmoid
+# conv
+conv_model: ReDialConv
+# embedding: word2vec
+embedding_dim: 300
+utterance_encoder_hidden_size: 200
+dialog_encoder_hidden_size: 200
+dialog_encoder_num_layers: 2
+use_dropout: True
+dropout: 0.1
+decoder_hidden_size: 200
+decoder_num_layers: 2
+# optim
+rec:
+  epoch: 50
+  batch_size: 4096
+  optimizer:
+    name: Adam
+    lr: !!float 1e-3
+  lr_scheduler:
+    name: ReduceLROnPlateau
+    patience: 3
+    factor: 0.5
+  early_stop: true
+  impatience: 5
+  stop_mode: min
+conv:
+  epoch: 200
+  batch_size: 128
+  optimizer:
+    name: Adam
+    lr: !!float 1e-3
+  lr_scheduler:
+    name: ReduceLROnPlateau
+    patience: 3
+    factor: 0.5
+  early_stop: false
+  impatience: 5
+  stop_mode: min
