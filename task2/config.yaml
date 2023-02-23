@@ -1,0 +1,44 @@
+
+do_train: True   # 训练
+do_eval: True    # 训练过程中eval
+do_predict: True # 预测
+train_path: data/train.json
+dev_path: data/dev.json
+test_path: data/test.json
+# model_name_or_path: /users7/hwang/program/ali/output/penloss3/all/checkpoint-1782   # 模型地址
+model_name_or_path: /users7/hwang/embeddings/bert/base-chinese
+b_dim: 768
+h_dim: 384
+s_dim: 
+embed_size: 50
+a_maxlen: 7
+avg_type: real_word
+test_gentype: beam
+cat_mlp: True
+label_num: 23
+max_length: 128      #tokenizer时最大长度
+batch_size: 32
+num_train_epochs: 50
+per_device_train_batch_size: 512
+per_device_eval_batch_size: 512
+warmup_steps: 500
+weight_decay: 0.01
+save_steps: 1000
+scale: 20.0       
+output_lr: 1e-3
+backbone_lr: 1e-5
+penalty: 20
+dropout: 0.1
+save_total_limit: 15
+margin: 0.5       
+output_dir: output
+gen_output_dir: gen_output
+logging_dir: logs    
+gen_logging_dir: gen_logs
+output_hidden_states: False   
+log_dir: log
+deploymodel_path: checkpoint-41272  # 要部署的模型地址
+
+improve_threshold: 0.996
+patient_increase: 3
+early_stop: True
