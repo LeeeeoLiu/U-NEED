@@ -1,15 +1,25 @@
-# 任务简介
+# 任务简介 Task Introduction
 提问任务旨在从当前的对话历史中挖掘用户的潜在可能需求，来选择若干个能够引导出更多用户需求信息的属性。
+
+Elicitation task aims to mine the potential needs of users from current dialogue history to select several attributes that can lead to more information about user needs.
 
 具体而言，基线方法如下：
 1. 建模为多标签分类任务，通过Bert对文本进行编码，然后直接预测每个属性的概率，若概率大于0.5，则选为本轮需要提问的属性；
 2. 建模为序列生成任务，利用自回归生成来建模属性集合之间的依赖关系
 
-# 评价指标
+Specifically, two baseline methods are as follows:
+1. Model the task as a multi-label classification task. Encode the text with Bert, and then directly predict the probability of each attribute. If the probability is greater than 0.5, it will be selected as the attribute that needs to be asked in this turn;
+2. Model the task as a sequence generation task, using autoregressive generation to model dependencies between attribute sets.
+
+# 评价指标 Evaluation Metric
 Precison、Recall、F1
 
-# 数据处理方法
-在一个对话中，当遇到标签为"系统提问"的utterance，则构造一条数据。标签为该utterance包含的所有询问的属性，输入为当前轮之前的对话历史的拼接+[SEP]+对话历史提到的所有属性。示例如下：
+# 数据构造 Data Preparation
+在一个对话中，当遇到标签为"系统提问"的utterance，则构造一条数据。标签为该utterance包含的所有询问的属性，输入为当前轮之前的对话历史的拼接+[SEP]+对话历史提到的所有属性。
+
+示例如下：
+
+
 ```json
 {
     "domain": "鞋类行业",
