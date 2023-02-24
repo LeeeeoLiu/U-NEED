@@ -1,11 +1,14 @@
 # U-NEED介绍
 我们收集了一个以用户需求为中心的电商对话式推荐数据集（U-NEED）。
+
 We collect a user needs-centric E-commerce conversational recommendation dataset (U-NEED). 
 
 U-NEED包含了7,698个细粒度标注的售前对话，333,879个用户行为和332,148条商品知识元组。
+
 U-NEED consists of 7,698 fine-grained annotated pre-sales dialogues, 333,879 user behaviors and 332,148 product knowledge tuples. 
 
 对于售前对话的每一条语句，我们雇佣了专业的众包平台来标注：说话人的动作，语句涉及的属性和语句中推荐的商品。
+
 For each utterance of pre-sales dialogue, we hire a professional crowdsourcing platform to annotate the action of the speaker, the attributes involved, and the recommended products.
 
 # 基线模型结果 Baseline Results

@@ -1,5 +1,6 @@
 U-NEED为中文数据集，以下是我们为每个行业提供的样例。
-The language of U-NEED is Chinese, and we provide an example for each industry as follows.
+
+The language of U-NEED is Chinese, and we provide an example for each category as follows.
 
 # 美妆 Beauty
 ```json
