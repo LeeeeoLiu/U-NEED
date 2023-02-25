@@ -46,7 +46,7 @@ Dialogue Behavior Definition:
    - 注意：
       - 如果用户在多个轮次表达了相同的诉求（可能因为不同客服接待导致重复表达），选择最近的轮次进行标注。
 
-- User needs
+- User need (UN)
     - Users initially express their purchase needs. It usually appears at the front of the core pre-sale turns.
     - For example: I want a hydrating face cream, please recommend; which eye cream is best for around 50 years old
     - Notice:
@@ -58,7 +58,7 @@ Dialogue Behavior Definition:
    - 注意：
       - 客服的提问必须关联到第三个sheet【1美妆_属性】中提到的内容，如果只是普通的询问，如有什么可以帮您呢、或者问不在范围内的属性，则不标注出来。
 
-- System question
+- System ask (SA)
     - The customer service staff asks for a specific attribute in order to obtain the user's further preferences. Generally appear after user needs
     - For example: what is your skin type; can you tell me your age?
     - Notice:
@@ -68,7 +68,7 @@ Dialogue Behavior Definition:
    - 用户回答客服询问的某个属性对应的具体偏好。一般出现在系统提问后面的用户发言
    - 例如：我皮肤有点油；今年25岁
 
-- User answer
+- User answer (UA)
     - The user's specific preference corresponding to a certain attribute of the customer service inquiry. The user answer that usually appears after the system question
     - Example: I have oily skin; I am 25 years old
 
@@ -78,7 +78,7 @@ Dialogue Behavior Definition:
    - 注意：
       - 标注时除了语义关系判断以外，还要注意时间连续性。例如第17轮虽然推荐了某个商品，但是可以看到距离用户上次发言已经过去了17分钟，这个是系统自动推荐某个活动链接，并不是客服针对用户诉求推荐的某款商品，注意甄别。
 
-- System recommendation
+- System recommend (SR)
     - When customer service staff recommends a certain product, it must contain a certain item id, which may partially contain marketing words. Usually appear after user answers or user feedback.
     - For example: Dear, I recommend you to use this item id=xxxx;
     - Notice:
@@ -90,7 +90,7 @@ Dialogue Behavior Definition:
    - 注意：
       - 用户反馈和用户回答的区别是，一般在某个推荐过后，用户的诉求都认为是用户反馈。在第一次推荐之前，用户针对客服的提问所做的回答，一般都是用户回答
 
-- customer feedback
+- User feedback(UF)
     - The user gave feedback on further purchase demands based on the customer service staff recommendation above. Generally appear after the system recommends
     - For example: Will this one be a bit greasy, I want something dry; do you have any recommendations for other suitable series?
     - Notice:
@@ -102,7 +102,7 @@ Dialogue Behavior Definition:
    - 注意：
       - 普通的话术，如您可以试试哦，这种不包含商品类的介绍不需要纳入。一般系统解释指的是推荐这款商品的理由，比如包含了针对用户某个需求的商品特色信息介绍。
 
-- System explanation
+- System expain (SE)
     - The text-only introduction from customer service staff in the process of recommending item. Generally, it will appear before and after the system recommendation.
     - For example: this product contains essence ingredients, which are specially aimed at the wrinkles on your side.
     - Notice:
